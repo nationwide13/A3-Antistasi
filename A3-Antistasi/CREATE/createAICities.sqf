@@ -1,4 +1,4 @@
-//NOTe: I also use it for Rebels
+//NOTE: I also use it for Rebels
 if (!isServer and hasInterface) exitWith{};
 
 private ["_markerX","_groups","_soldiers","_positionX","_num","_dataX","_govtCitySupport","_rebelCitySupport","_isGovt","_params","_frontierX","_array","_countX","_groupX","_dog","_grp","_sideX"];

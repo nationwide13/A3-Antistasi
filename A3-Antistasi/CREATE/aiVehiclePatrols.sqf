@@ -1,6 +1,6 @@
 private ["_soldiers","_vehiclesX","_groups","_base","_posBase","_roads","_typeCar","_arrayAirports","_arrayDestinations","_radiusX","_road","_veh","_vehCrew","_groupVeh","_groupX","_groupP","_distanceX","_spawnPoint"];
 
-diag_log "[Antistasi] Spawning AI Vehicle Patrol (aiVehPatrol.sqf)";
+diag_log "[Antistasi] Spawning AI Vehicle Patrol (aiVehPatrols.sqf)";
 
 _soldiers = [];
 _vehiclesX = [];
