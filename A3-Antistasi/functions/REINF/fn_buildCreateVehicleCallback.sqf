@@ -40,14 +40,8 @@ build_targetLocation = nil;
 
 if (build_cost > 0) then
 	{
-	if (!isMultiPlayer) then
-		{
-		_nul = [0, - build_cost] remoteExec ["A3A_fnc_resourcesFIA",2];
-		}
-	else
-		{
-		[-build_cost] call A3A_fnc_resourcesPlayer;
-		};
+	_nul = [0, - build_cost] remoteExec ["A3A_fnc_resourcesFIA",2];
+	[-0.06 * build_cost , Occupants] remoteExec ["A3A_fnc_timingCA",2];
 	};
 
 build_engineerSelected setVariable ["constructing",true];
@@ -85,13 +79,13 @@ if (!_isPlayer) then {build_engineerSelected doFollow (leader build_engineerSele
 private _veh = createVehicle [_structureType, _positionX, [], 0, "CAN_COLLIDE"];
 _veh setDir _dir;
 
-if ((build_type == "SB") or (build_type == "CB")) exitWith
+if (build_cost > 0) exitWith
 {
 	staticsToSave pushBackUnique _veh;
-	publicVariable "staticsToSave"
+	publicVariable "staticsToSave";
 };
 
-
+/*
 //falta inicializarlo en veh init
 if (build_type == "RB") then
 	{
@@ -118,9 +112,7 @@ if (build_type == "RB") then
 		{deleteVehicle _x} forEach (_this - [_veh]);
 		};
 	};
-
-build_nearestFriendlyMarker = nil;
-build_engineerSelected = nil;
+*/
 	
 while {alive _veh} do
 	{
@@ -130,3 +122,6 @@ while {alive _veh} do
 		};
 	sleep 60;
 	};
+	
+build_nearestFriendlyMarker = nil;
+build_engineerSelected = nil;

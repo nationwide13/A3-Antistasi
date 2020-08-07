@@ -184,13 +184,13 @@ switch (_callbackTarget) do {
 			case CALLBACK_VEH_IS_VALID_LOCATION: {
 				private _pos =	_callbackParams param [0];
 				switch (build_type) do {
-					case "RB": {
+					case "ON_ROAD": {
 						[isOnRoad _pos, "Roadblocks can only be built on roads"];
 					};
-					case "SB": {
+					case "OFF_ROAD": {
 						[!(isOnRoad _pos) && _pos inArea build_nearestFriendlyMarker, "Bunkers can only be built off roads, in friendly areas"];
 					};
-					case "CB": {
+					case "OFF_ROAD_FRIENDLY": {
 						[!(isOnRoad _pos) && _pos inArea build_nearestFriendlyMarker, "Bunkers can only be built off roads, in friendly areas"];
 					};
 					default {
