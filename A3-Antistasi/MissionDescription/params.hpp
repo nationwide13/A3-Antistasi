@@ -12,7 +12,7 @@ class Params
           title = "Game Mode - Do NOT change this mid mission";
           values[] = {1,2,3,4};
           texts[] = {"Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov","Reb vs Inv"};
-          default = 1;
+          default = 2;
      };
      class autoSave
      {
@@ -26,41 +26,41 @@ class Params
           title = "Time between autosaves (in minutes)";
           values[] = {600,1200,1800,3600,5400};
           texts[] = {"10","20","30","60","90"};
-          default = 3600;
+          default = 1200;
      };
      class membership
      {
           title = "Enable Server Membership";
           texts[] = {"Yes","No"};
           values[] = {1,0};
-          default = 1;
+          default = 0;
      };
      class switchComm
      {
           title = "Enable Commander Switch (highest ranked player)";
           values[] = {1,0};
           texts[] = {"Yes","No"};
-          default = 1;
+          default = 0;
      };
      class tkPunish
      {
           title = "Enable Teamkill Punish";
           values[] = {1,0};
           texts[] = {"Yes","No"};
-          default = 1;
+          default = 0;
      };
      class mRadius
      {
           title = "Max distance from HQ for tasks";
           values[] = {2000,4000,6000,8000,10000,12000};
-          default = 4000;
+          default = 8000;
      };
      class allowPvP
      {
           title = "Allow PvP Slots";
           values[] = {1,0};
           texts[] = {"Yes","No"};
-          default = 1;
+          default = 0;
      };
      class pMarkers
      {
@@ -74,26 +74,26 @@ class Params
           title = "Mission Difficulty";
           values[] = {1,2,3};
           texts[] = {"Easy","Normal","Hard"};
-          default = 2;
+          default = 3;
      };
      class unlockItem
      {
           title = "Number of the same item required to unlock";
           values[] = {15,25,40};
-          default = 25;
+          default = 40;
      };
      class memberOnlyMagLimit
      {
           title = "Number of magazines needed for guests to be able to use them";
           values[] = {10,20,30,40,50,60};
-          default = 40;
+          default = 20;
      };
      class civTraffic
      {
           title = "Rate of Civ Traffic";
           values[] = {0,1,2,4,};
           texts[] = {"None","Low","Medium","High"};
-          default = 2;
+          default = 4;
      };
      class memberSlots
      {
@@ -135,7 +135,7 @@ class Params
           title = "Enable Napalm Bombing for AI";
           values[] = {0,1};
           texts[] = {"No","Yes"};
-          default = 0;
+          default = 1;
      };
      class teamSwitchDelay
      {
@@ -156,14 +156,14 @@ class Params
           title = "Should Guided Launchers become unlocked?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class allowUnlockedExplosives
      {
           title = "Should Explosives become unlocked?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class startWithLongRangeRadio
      {
@@ -177,7 +177,7 @@ class Params
           title = "Chance of helmet loss on headshots";
           values[] = {0,33,66,100};
           texts[] = {"Never","Sometimes","Often","Always"};
-          default = 33;
+          default = 100;
      };
      class Spacer10
      {
@@ -198,28 +198,28 @@ class Params
           title = "Allow Items and Vehicles from Marksman DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Heli
      {
           title = "Allow Items and Vehicles from Heli DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Expansion
      {
           title = "Allow Items and Vehicles from Apex DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Jets
      {
           title = "Allow Items and Vehicles from Jets DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class Orange
      {
@@ -233,7 +233,7 @@ class Params
           title = "Allow Items and Vehicles from Tanks DLC?";
           values[] = {1,0};
           texts[] =  {"Yes","No"};
-          default = 0;
+          default = 1;
      };
      class GlobMob
      {
@@ -303,7 +303,7 @@ class Params
           title = "Maximum Weapon Types in Crates";
           values[] = {0,2,4,6,8,12,16};
           texts[] = {"1","3","5","7","9","13","17"};
-          default = 9;
+          default = 4;
      };
      class crateWepNumMax
      {
@@ -324,7 +324,7 @@ class Params
           title = "Maximum Item Types in Crates";
           values[] = {0,2,4,9};
           texts[] = {"1","3","5","10"};
-          default = 4;
+          default = 3;
      };
      class crateItemNumMax
      {
@@ -345,7 +345,7 @@ class Params
           title = "Maximum Ammo Types in Crates";
           values[] = {0,2,4,6,9,14,19};
           texts[] = {"1","3","5","7","10","15","20"};
-          default = 6;
+          default = 4;
      };
      class crateAmmoNumMax
      {
