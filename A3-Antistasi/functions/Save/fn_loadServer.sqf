@@ -27,6 +27,7 @@ if (isServer) then {
 	["distanceSPWN"] call A3A_fnc_getStatVariable;
 	["civPerc"] call A3A_fnc_getStatVariable;
 	["maxUnits"] call A3A_fnc_getStatVariable;
+	["buildingAttackChance"] call A3A_fnc_getStatVariable;
 	["membersX"] call A3A_fnc_getStatVariable;
 	["vehInGarage"] call A3A_fnc_getStatVariable;
 	["destroyedBuildings"] call A3A_fnc_getStatVariable;
@@ -35,6 +36,7 @@ if (isServer) then {
 	["killZones"] call A3A_fnc_getStatVariable;
 	["controlsSDK"] call A3A_fnc_getStatVariable;
 	["bombRuns"] call A3A_fnc_getStatVariable;
+	["buildingAttackChance"] call A3A_fnc_getStatVariable;
 	waitUntil {!isNil "arsenalInit"};
 	["jna_dataList"] call A3A_fnc_getStatVariable;
 	//===========================================================================

@@ -42,6 +42,13 @@ if (build_cost > 0) then
 	{
 	_nul = [0, - build_cost] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[-0.06 * build_cost , Occupants] remoteExec ["A3A_fnc_timingCA",2];
+	_chance = round(random 100);
+	if (_chance <= buildingAttackChance) then {
+		buildingAttackChance = 0;
+		[[],"A3A_fnc_attackHQ"] remoteExec ["A3A_fnc_scheduler",2];
+	} else {
+		buildingAttackChance = buildingAttackChance + (build_cost / 1000);
+	}
 	};
 
 build_engineerSelected setVariable ["constructing",true];

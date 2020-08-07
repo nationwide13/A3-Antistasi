@@ -13,7 +13,7 @@
 specialVarLoads = [
 	"outpostsFIA","minesX","staticsX","attackCountdownOccupants","antennas","mrkNATO","mrkSDK","prestigeNATO",
 	"prestigeCSAT","posHQ","hr","armas","items","backpcks","ammunition","dateX","prestigeOPFOR",
-	"prestigeBLUFOR","resourcesFIA","skillFIA","distanceSPWN","civPerc","maxUnits","destroyedSites",
+	"prestigeBLUFOR","resourcesFIA","skillFIA","distanceSPWN","civPerc","maxUnits","buildingAttackChance","destroyedSites",
 	"garrison","tasks","smallCAmrk","membersX","vehInGarage","destroyedBuildings","idlebases",
 	"idleassets","chopForest","weather","killZones","jna_dataList","controlsSDK","mrkCSAT","nextTick",
 	"bombRuns","difficultyX","gameMode","wurzelGarrison","aggressionOccupants", "aggressionInvaders",
@@ -97,6 +97,7 @@ if (_varName in specialVarLoads) then {
 	if (_varName == 'distanceSPWN') then {distanceSPWN = _varValue; distanceSPWN1 = distanceSPWN * 1.3; distanceSPWN2 = distanceSPWN /2; publicVariable "distanceSPWN";publicVariable "distanceSPWN1";publicVariable "distanceSPWN2"};
 	if (_varName == 'civPerc') then {civPerc = _varValue; if (civPerc < 1) then {civPerc = 35}; publicVariable "civPerc"};
 	if (_varName == 'maxUnits') then {maxUnits=_varValue; publicVariable "maxUnits"};
+	if (_varName == 'buildingAttackChance') then {buildingAttackChance=_varValue; publicVariable "buildingAttackChance"};
 	if (_varName == 'vehInGarage') then {vehInGarage= +_varValue; publicVariable "vehInGarage"};
 	if (_varName == 'destroyedBuildings') then {
 		{
