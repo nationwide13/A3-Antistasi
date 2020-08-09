@@ -149,7 +149,7 @@ addMissionEventHandler ["EachFrame",
 	private _placementPos = [];
 	//Just use the current position, if we're in 'Precision' mode
 	if (inputAction "turbo" > 0) then {
-		private _validPos = _pos findEmptyPosition [0, 0, typeOf vehPlace_previewVeh];	
+		private _validPos = _pos;	
 		if (count _validPos > 0) then {
 			_placementPos = _pos;
 		};
