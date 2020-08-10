@@ -135,7 +135,7 @@ class Params
           title = "Enable Napalm Bombing for AI";
           values[] = {0,1};
           texts[] = {"No","Yes"};
-          default = 1;
+          default = 0;
      };
      class teamSwitchDelay
      {
