@@ -2213,6 +2213,17 @@ class construction_menu_custom 	{
 			tooltip = "Concrete tunnel for safely moving around a small area.";
 			action = "closeDialog 0;nul = [""Land_CncShelter_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
+		class 8slots_R5: RscButton
+		{
+			idc = -1;
+			text = "Delete Asset"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.710025 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Delete something. Cannot undo. Danger.";
+			action = "closeDialog 0;";
+		};
 	};
 };
 

@@ -83,8 +83,7 @@ if (!_isPlayer) then {{build_engineerSelected enableAI _x} forEach ["ANIM","AUTO
 if (time <= _timeOut) exitWith {["Build Info", "Construction cancelled"] call A3A_fnc_customHint;};
 if (!_isPlayer) then {build_engineerSelected doFollow (leader build_engineerSelected)};
 
-private _veh = createVehicle [_structureType, _positionX, [], 0, "CAN_COLLIDE"];
-_veh setDir _dir;
+private _veh = [_structureType, _posASL, _dir] call A3A_fnc_placeEmptyVehicle;
 
 if (build_cost > 0) exitWith
 {
