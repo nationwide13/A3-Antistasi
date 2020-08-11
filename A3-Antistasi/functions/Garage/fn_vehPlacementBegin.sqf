@@ -31,6 +31,8 @@ vehPlace_previewVeh enableSimulation false;
 #define KEY_ENTER 28
 #define KEY_LEFT 205
 #define KEY_RIGHT 203
+#define KEY_UP 200;
+#define KEY_DOWN 208;
 
 vehPlace_actionToAttempt = VEHPLACE_NO_ACTION;
 
@@ -77,6 +79,7 @@ if(isNil "vehPlace_keyDownHandler")	then {
 
 vehPlace_updatedLookPosition = [0,0,0];
 vehPlace_lastLookPosition = [0,0,0];
+private _customZ = 0;
 addMissionEventHandler ["EachFrame",
 	{
 	scopeName "handler";
@@ -115,6 +118,14 @@ addMissionEventHandler ["EachFrame",
 			case VEHPLACE_ACTION_ROT_RIGHT: 
 				{
 					vehPlace_previewVeh setDir (getDir vehPlace_previewVeh - 1);
+				};
+			case VEHPLACE_ACTION_TRANS_UP:
+				{
+					_customZ = _customZ + 1;
+				};
+			case VEHPLACE_ACTION_TRANS_DOWN:
+				{
+					_customZ = _customZ - 1;
 				};
 			};
 			vehPlace_actionToAttempt = VEHPLACE_NO_ACTION;
@@ -171,6 +182,10 @@ addMissionEventHandler ["EachFrame",
 	if (!(_isValidLocationArray select 0)) exitWith {
 		vehPlace_previewVeh setPosASL [0,0,0];
 	};
+
+	_pos = getPosASL vehPlace_previewVeh;
+	_pos set [2, _customZ];
+	vehPlace_previewVeh setPosASL _pos;
 	
 	// If vehicle is a boat, make sure it spawns at sea level?
 
