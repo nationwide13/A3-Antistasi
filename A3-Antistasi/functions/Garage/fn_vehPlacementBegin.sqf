@@ -31,6 +31,8 @@ vehPlace_previewVeh enableSimulation false;
 #define KEY_ENTER 28
 #define KEY_LEFT 205
 #define KEY_RIGHT 203
+#define KEY_UP 200
+#define KEY_DOWN 208
 
 vehPlace_actionToAttempt = VEHPLACE_NO_ACTION;
 
@@ -71,12 +73,23 @@ if(isNil "vehPlace_keyDownHandler")	then {
 			_handled = true;
 			vehPlace_actionToAttempt = VEHPLACE_ACTION_ROT_RIGHT;
 			};
+		if (_this select 1 == KEY_UP) then
+			{
+				_handled = true;
+				vehPlace_actionToAttempt = VEHPLACE_ACTION_TRANS_UP;
+			};
+		if (_this select 1 == KEY_DOWN) then
+			{
+				_handled = true;
+				vehPlace_actionToAttempt = VEHPLACE_ACTION_TRANS_DOWN;
+			};
 		_handled;
 	}];
 };
 
 vehPlace_updatedLookPosition = [0,0,0];
 vehPlace_lastLookPosition = [0,0,0];
+customZ = 0;
 addMissionEventHandler ["EachFrame",
 	{
 	scopeName "handler";
@@ -115,6 +128,20 @@ addMissionEventHandler ["EachFrame",
 			case VEHPLACE_ACTION_ROT_RIGHT: 
 				{
 					vehPlace_previewVeh setDir (getDir vehPlace_previewVeh - 1);
+				};
+			case VEHPLACE_ACTION_TRANS_UP:
+				{
+					customZ = customZ + 1;
+					translatedPos = getPosATL vehPlace_previewVeh;
+					translatedPos set [2, customZ];
+					vehPlace_previewVeh setPosATL translatedPos;
+				};
+			case VEHPLACE_ACTION_TRANS_DOWN:
+				{
+					customZ = customZ - 1;
+					translatedPos = getPosATL vehPlace_previewVeh;
+					translatedPos set [2, customZ];
+					vehPlace_previewVeh setPosATL translatedPos;
 				};
 			};
 			vehPlace_actionToAttempt = VEHPLACE_NO_ACTION;
@@ -185,6 +212,7 @@ addMissionEventHandler ["EachFrame",
 	}
 	else {
 		if (_water || _placementPos distance2d player > 100) exitWith {vehPlace_previewVeh setPosASL [0,0,0]};
+		_placementPos set [2, customZ];
 		vehPlace_updatedLookPosition = _pos;
 		vehPlace_previewVeh setPosATL _placementPos;
 		vehPlace_previewVeh setVectorUp (_chosenIntersection select 1);
