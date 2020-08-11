@@ -131,14 +131,14 @@ addMissionEventHandler ["EachFrame",
 				};
 			case VEHPLACE_ACTION_TRANS_UP:
 				{
-					customZ = customZ + 1;
+					customZ = customZ + 0.1;
 					translatedPos = getPosATL vehPlace_previewVeh;
 					translatedPos set [2, customZ];
 					vehPlace_previewVeh setPosATL translatedPos;
 				};
 			case VEHPLACE_ACTION_TRANS_DOWN:
 				{
-					customZ = customZ - 1;
+					customZ = customZ - 0.1;
 					translatedPos = getPosATL vehPlace_previewVeh;
 					translatedPos set [2, customZ];
 					vehPlace_previewVeh setPosATL translatedPos;
