@@ -31,8 +31,8 @@ vehPlace_previewVeh enableSimulation false;
 #define KEY_ENTER 28
 #define KEY_LEFT 205
 #define KEY_RIGHT 203
-#define KEY_UP 200
-#define KEY_DOWN 208
+#define KEY_UP 219
+#define KEY_DOWN 209
 
 vehPlace_actionToAttempt = VEHPLACE_NO_ACTION;
 
