@@ -2065,21 +2065,21 @@ class construction_menu 	{
 			tooltip = "Need to be built in garrison controlled zones and cost money";
 			action = "closeDialog 0;nul = createDialog ""bunker_menu""";
 		};
-		class 8slots_R3: RscButton
+		class 8slots_M3: RscButton
 		{
 			idc = -1;
 			text = "Custom buildings"; //--- ToDo: Localize;
-			x = 0.482498 * safezoneW + safezoneX;
-			y = 0.514003 * safezoneH + safezoneY;
+			x = 0.369498 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
 			tooltip = "Actual base building stuff.";
-			action = "closeDialog 0;nul = createDialog ""construction_menu_custom""";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_pg1""";
 		};
 	};
 };
 
-class construction_menu_custom 	{
+class construction_menu_custom_pg1 {
 	idd=-1;
 	movingenable=false;
 
@@ -2097,7 +2097,177 @@ class construction_menu_custom 	{
 		class 8slots_frame: RscFrame
 		{
 			idc = -1;
-			text = "Construction Options"; //--- ToDo: Localize;
+			text = "Construction Options Page 1"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.462103 * safezoneH;
+		};
+		class 8slots_Back: RscButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_generic_button_back_text;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0";
+		};
+		//Action Buttons
+		class 8slots_Delete: RscButton
+		{
+			idc = -1;
+			text = "Delete Asset"; //--- ToDo: Localize;
+			x = 0.408998 * safezoneW + safezoneX;
+			y = 0.275025 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Delete something. Cannot undo. Danger.";
+			action = "closeDialog 0;";
+		};
+		class 8slots_L1: RscButton
+		{
+			idc = -1;
+			text = "Sandbag bunker"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.317959 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Sandbag bunker, for sneaky shooting.";
+			action = "closeDialog 0;nul = [""Land_HBarrierTower_F"",15,800,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_R1: RscButton
+		{
+			idc = -1;
+			text = "3 large sandbags"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX; 	//right side
+			y = 0.317959 * safezoneH + safezoneY; 	//height (smaller is up)
+			w = 0.175015 * safezoneW;				//Width of button
+			h = 0.0560125 * safezoneH;				//height of button
+			tooltip = "Full of sand. A few large bagged boys next to each other. Useful for a short wall.";
+			action = "closeDialog 0;nul = [""Land_HBarrier_3_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_L2: RscButton
+		{
+			idc = -1;
+			text = "Double stacked wall"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Double stacked sandbags with a ramp to get onto. Very useful for base building";
+			action = "closeDialog 0;nul = [""Land_HBarrierWall4_F"",15,1500,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_R2: RscButton
+		{
+			idc = -1;
+			text = "Double stacked corner"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Double stacked sandbags creating a corner, with a ramp.";
+			action = "closeDialog 0;nul = [""Land_HBarrierWall_corner_F"",15,1500,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_L3: RscButton
+		{
+			idc = -1;
+			text = "Extra large sandbags"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.514003 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Extra large sandbags. Useful for a tall wall.";
+			action = "closeDialog 0;nul = [""Land_HBarrier_Big_F"",15,2000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_R3: RscButton
+		{
+			idc = -1;
+			text = "Roof + wall"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.514003 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Short overhang with a wall on the backside. Useful for parking vehicles under, or staying out of the rain.";
+			action = "closeDialog 0;nul = [""Land_Shed_Small_F"",15,1750,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_L4: RscButton
+		{
+			idc = -1;
+			text = "Concrete wall"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.612025 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Tall, strong concrete wall. Will not be knocked down carelessly by vehicles. Excellent for providing cover for distant and aerial units.";
+			action = "closeDialog 0;nul = [""Land_CncWall4_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_R4: RscButton
+		{
+			idc = -1;
+			text = "Concrete shelter"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.612025 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Concrete tunnel for safely moving around a small area.";
+			action = "closeDialog 0;nul = [""Land_CncShelter_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_M1: RscButton
+		{
+			idc = -1;
+			text = "Free Cover Buildings"; //--- ToDo: Localize;
+			x = 0.394000 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.155015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Free buildings hiding behind this button. They do not save and get removed upon server restart.";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_cover""";
+		};
+		class 8slots_TL: RscButton
+		{
+			idc = -1;
+			text = "Next Page"; //--- ToDo: Localize;
+			x = 0.582498 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Next page...";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_pg2""";
+		};
+		class 8slots_TR: RscButton
+		{
+			idc = -1;
+			text = "Previous Page"; //--- ToDo: Localize;
+			x = 0.249481 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Previous page...";
+			action = "closeDialog 0;nul = createDialog ""construction_menu""";
+		};
+	};
+};
+
+class construction_menu_custom_pg2 {
+	idd=-1;
+	movingenable=false;
+
+	class controls {
+		//Custom Menu Structure
+		class 8slots_box: BOX
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_generic_box_text;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.492103 * safezoneH;
+		};
+		class 8slots_frame: RscFrame
+		{
+			idc = -1;
+			text = "Construction Options Page 2"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2117,112 +2287,260 @@ class construction_menu_custom 	{
 		class 8slots_L1: RscButton
 		{
 			idc = -1;
-			text = "Custom Cover Buildings"; //--- ToDo: Localize;
+			text = "Drive through fuel"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Custom building 1";
-			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_cover""";
+			tooltip = "Drive through gas station. Just ran out of fuel unfortunately.";
+			action = "closeDialog 0;nul = [""Land_FuelStation_Shed_F"",15,4500,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_R1: RscButton
 		{
 			idc = -1;
-			text = "Sandbag bunker"; //--- ToDo: Localize;
+			text = "Concrete Slab (roof)"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Sandbag bunker, for sneaky shooting.";
-			action = "closeDialog 0;nul = [""Land_HBarrierTower_F"",15,800,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Possible roof option 2 (ghost hotel slab)";
+			action = "closeDialog 0;nul = [""Land_GH_Platform_F"",15,150,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_L2: RscButton
 		{
 			idc = -1;
-			text = "3 large sandbags"; //--- ToDo: Localize;
+			text = "Stairs"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Full of sand. A few large bagged boys next to each other. Useful for a short wall.";
-			action = "closeDialog 0;nul = [""Land_HBarrier_3_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Go up, or down. I don't care, just get out of the way.";
+			action = "closeDialog 0;nul = [""Land_GH_Stairs_F"",15,150,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_R2: RscButton
 		{
 			idc = -1;
-			text = "Double stacked wall"; //--- ToDo: Localize;
+			text = "Concrete ramp small"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Double stacked sandbags with a ramp to get onto. Very useful for base building";
-			action = "closeDialog 0;nul = [""Land_HBarrierWall4_F"",15,1500,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Twice as fast as ladders.";
+			action = "closeDialog 0;nul = [""Land_RampConcrete_F"",15,250,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_L3: RscButton
 		{
 			idc = -1;
-			text = "Double stacked corner"; //--- ToDo: Localize;
+			text = "Concrete slab (ground)"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Double stacked sandbags creating a corner, with a ramp.";
-			action = "closeDialog 0;nul = [""Land_HBarrierWall_corner_F"",15,1500,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "For a flatter area.";
+			action = "closeDialog 0;nul = [""BlockConcrete_F"",15,250,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_R3: RscButton
 		{
 			idc = -1;
-			text = "Extra large sandbags"; //--- ToDo: Localize;
+			text = "Wooden ramp"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.514003 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Extra large sandbags. Useful for a tall wall.";
-			action = "closeDialog 0;nul = [""Land_HBarrier_Big_F"",15,2000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Still faster than a ladder.";
+			action = "closeDialog 0;nul = [""Land_Obstacle_Ramp_F"",15,75,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_L4: RscButton
 		{
 			idc = -1;
-			text = "Roof + wall"; //--- ToDo: Localize;
+			text = "Small sniper tower"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Short overhang with a wall on the backside. Useful for parking vehicles under, or staying out of the rain.";
-			action = "closeDialog 0;nul = [""Land_Shed_Small_F"",15,1750,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Not as cool as the large one. Will bring the eye of sauron upon Petros.";
+			action = "closeDialog 0;nul = [""Land_Cargo_Patrol_V3_F"",90,15000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
 		class 8slots_R4: RscButton
 		{
 			idc = -1;
-			text = "Concrete wall"; //--- ToDo: Localize;
+			text = "Big sniper tower"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.612025 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Tall, strong concrete wall. Will not be knocked down carelessly by vehicles. Excellent for providing cover for distant and aerial units.";
-			action = "closeDialog 0;nul = [""Land_CncWall4_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Massive sniper tower. Stupid expensive, will probably trigger an enemy attack.";
+			action = "closeDialog 0;nul = [""Land_Cargo_Tower_V3_F"",180,35000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
-		class 8slots_L5: RscButton
+		class 8slots_TL: RscButton
 		{
 			idc = -1;
-			text = "Concrete shelter"; //--- ToDo: Localize;
+			text = "Next Page"; //--- ToDo: Localize;
+			x = 0.582498 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Next page...";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_pg3""";
+		};
+		class 8slots_TR: RscButton
+		{
+			idc = -1;
+			text = "Previous Page"; //--- ToDo: Localize;
+			x = 0.249481 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Previous page...";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_pg1""";
+		};
+	};
+};
+
+class construction_menu_custom_pg3 {
+	idd=-1;
+	movingenable=false;
+
+	class controls {
+		//Custom Menu Structure
+		class 8slots_box: BOX
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_generic_box_text;
+			x = 0.244979 * safezoneW + safezoneX;
+			y = 0.223941 * safezoneH + safezoneY;
+			w = 0.445038 * safezoneW;
+			h = 0.492103 * safezoneH;
+		};
+		class 8slots_frame: RscFrame
+		{
+			idc = -1;
+			text = "Construction Options Page 3"; //--- ToDo: Localize;
+			x = 0.254979 * safezoneW + safezoneX;
+			y = 0.233941 * safezoneH + safezoneY;
+			w = 0.425038 * safezoneW;
+			h = 0.462103 * safezoneH;
+		};
+		class 8slots_Back: RscButton
+		{
+			idc = -1;
+			text = $STR_antistasi_dialogs_generic_button_back_text;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0";
+		};
+		//Action Buttons
+		class 8slots_L1: RscButton
+		{
+			idc = -1;
+			text = "Small concrete barrier"; //--- ToDo: Localize;
 			x = 0.272481 * safezoneW + safezoneX;
-			y = 0.710025 * safezoneH + safezoneY;
+			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Concrete tunnel for safely moving around a small area.";
-			action = "closeDialog 0;nul = [""Land_CncShelter_F"",15,1000,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+			tooltip = "Small barrier. Might be useful.";
+			action = "closeDialog 0;nul = [""Land_CncBarrierMedium_F"",15,200,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
 		};
-		class 8slots_R5: RscButton
+		class 8slots_R1: RscButton
 		{
 			idc = -1;
-			text = "Delete Asset"; //--- ToDo: Localize;
+			text = "Long small wall"; //--- ToDo: Localize;
 			x = 0.482498 * safezoneW + safezoneX;
-			y = 0.710025 * safezoneH + safezoneY;
+			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Delete something. Cannot undo. Danger.";
+			tooltip = "Short long concrete wall. Might be useful.";
+			action = "closeDialog 0;nul = [""Land_Concrete_SmallWall_8m_F"",15,600,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_L2: RscButton
+		{
+			idc = -1;
+			text = "Short small wall"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Short small concrete wall.";
+			action = "closeDialog 0;nul = [""Land_Concrete_SmallWall_4m_F"",15,300,""OFF_ROAD_FRIENDLY""] spawn A3A_fnc_build;";
+		};
+		class 8slots_R2: RscButton
+		{
+			idc = -1;
+			text = "Small sandbags"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "Make a quick small sandbag enough for one man";
+			action = "closeDialog 0;nul = [""Land_SandbagBarricade_01_half_F"",15,100,""OFF_ROAD""] spawn A3A_fnc_build;";
+		};
+		class 8slots_L3: RscButton
+		{
+			idc = -1;
+			text = "Medium sandbags"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.514003 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "A mid sized sandbag with capabilities for more than one soldier";
+			action = "closeDialog 0;nul = [""Land_SandbagBarricade_01_F"",15,200,""OFF_ROAD""] spawn A3A_fnc_build;";
+		};
+		class 8slots_R3: RscButton
+		{
+			idc = -1;
+			text = "N/A"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.514003 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "N/A";
 			action = "closeDialog 0;";
+		};
+		class 8slots_L4: RscButton
+		{
+			idc = -1;
+			text = "N/A"; //--- ToDo: Localize;
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.612025 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "N/A";
+			action = "closeDialog 0;";
+		};
+		class 8slots_R4: RscButton
+		{
+			idc = -1;
+			text = "N/A"; //--- ToDo: Localize;
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.612025 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			tooltip = "N/A";
+			action = "closeDialog 0;";
+		};
+		class 8slots_TL: RscButton
+		{
+			idc = -1;
+			text = "Not implemented yet"; //--- ToDo: Localize;
+			x = 0.582498 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Next page...";
+			action = "closeDialog 0;";
+		};
+		class 8slots_TR: RscButton
+		{
+			idc = -1;
+			text = "Previous Page"; //--- ToDo: Localize;
+			x = 0.249481 * safezoneW + safezoneX;
+			y = 0.683959 * safezoneH + safezoneY;
+			w = 0.105015 * safezoneW;
+			h = 0.0260125 * safezoneH;
+			tooltip = "Previous page...";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_pg2""";
 		};
 	};
 };
@@ -2245,7 +2563,7 @@ class construction_menu_custom_cover 	{
 		class 8slots_frame: RscFrame
 		{
 			idc = -1;
-			text = "Cover Options"; //--- ToDo: Localize;
+			text = "Free Cover Options"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -2259,7 +2577,7 @@ class construction_menu_custom_cover 	{
 			y = 0.251941 * safezoneH + safezoneY;
 			w = 0.06 * safezoneW;
 			h = 0.05 * safezoneH;
-			action = "closeDialog 0";
+			action = "closeDialog 0;nul = createDialog ""construction_menu_custom_pg1""";
 		};
 		//Action Buttons
 		class 8slots_L1: RscButton
