@@ -35,8 +35,8 @@ if (player distance _veh > 25) exitWith {["Garage", "You can't garage vehicles t
 
 if (_pool and (count vehInGarage >= (tierWar *5))) exitWith {["Garage", "You cannot garage more vehicles at your current War Level"] call A3A_fnc_customHint;};
 private _personalGarage = player getVariable ["personalGarage", []];
-if (!((count _personalGarage < personalGarageMax) or (personalGarageMax isEqualTo 0)) and !_pool) exitWith {["Garage", "Personal garage is full, you can't add more vehicles to it"] call A3A_fnc_customHint};
-
+private _playerRank = [player] call A3A_fnc_numericRank select 0;
+if (!((count _personalGarage < (personalGarageMax * _playerRank)) or (personalGarageMax isEqualTo 0)) and !_pool) exitWith {["Garage", "Personal garage is full, you can't add more vehicles to it"] call A3A_fnc_customHint};
 
 _exit = false;
 if (!_pool) then
